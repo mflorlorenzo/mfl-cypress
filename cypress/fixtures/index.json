@@ -1,0 +1,7 @@
+{
+  "loginButton": ".login",
+  "emailTextBox": "#email",
+  "passTextBox": "#passwd",
+  "submitLoginButton": "#SubmitLogin",
+  "accountClass": ".account"
+}
