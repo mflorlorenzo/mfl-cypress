@@ -9,6 +9,10 @@ export class PracticeHomePage{
     cy.get(selectors.submitLoginButton).click()
   }
 
+  logout(){
+    cy.get(selectors.logoutButton).click()
+  }
+
 }
 
 export const onPracticeHomePage = new PracticeHomePage()

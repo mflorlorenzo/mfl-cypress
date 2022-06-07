@@ -10,8 +10,10 @@ context('Automation Practice Web', () => {
 
     it('Login and logout', () => {
       onPracticeHomePage.login('flor@kryptomon.co', 'automation12345')
-      cy.get(selectors.accountClass).invoke('text').should('contains', 'Flor Automation')
-      cy.get('.logout').should('be.visible')
+      cy.get(selectors.userPageHeadingClass).invoke('text').should('contains', 'My account')
+      cy.get(selectors.logoutButton).should('be.visible')
+      onPracticeHomePage.logout()
+      cy.get(selectors.userPageHeadingClass).invoke('text').should('contains', 'Authentication')
     })
 
     it('My addresses: check info', () => {

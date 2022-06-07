@@ -1,7 +1,9 @@
 {
   "loginButton": ".login",
+  "logoutButton": ".logout",
   "emailTextBox": "#email",
   "passTextBox": "#passwd",
   "submitLoginButton": "#SubmitLogin",
-  "accountClass": ".account"
+  "accountClass": ".account",
+  "userPageHeadingClass": ".page-heading"
 }
