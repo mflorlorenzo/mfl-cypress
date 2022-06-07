@@ -1,5 +1,6 @@
 import { onPracticeHomePage } from "../support/page_objects/practiceHomePage"
 import selectors from "../fixtures/index.json"
+import { userLoginPage } from "../support/page_objects/userLoginPage"
 
 context('Automation Practice Web', () => {
 
@@ -9,10 +10,10 @@ context('Automation Practice Web', () => {
     })
 
     it('Login and logout', () => {
-      onPracticeHomePage.login('flor@kryptomon.co', 'automation12345')
+      userLoginPage.login('flor@kryptomon.co', 'automation12345')
       cy.get(selectors.userPageHeadingClass).invoke('text').should('contains', 'My account')
       cy.get(selectors.logoutButton).should('be.visible')
-      onPracticeHomePage.logout()
+      userLoginPage.logout()
       cy.get(selectors.userPageHeadingClass).invoke('text').should('contains', 'Authentication')
     })
 
@@ -34,14 +35,10 @@ context('Automation Practice Web', () => {
 
   })
 
-  describe('Orders', () => {
+  describe('HomePage', () => {
 
-    it('Place an order', () => {
-
-    })
-
-    it('Delete an existing order', () => {
-
+    it('Logo', () => {
+      cy.get(selectors.headerLogoClass).should('be.visible').and('have.attr', 'src', 'http://automationpractice.com/img/logo.jpg')
     })
 
   })
