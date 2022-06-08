@@ -1,3 +1,5 @@
+import { Utility } from "../support/utility"
+const url = new Utility().getBaseUrl()
 // This example commands.js shows you how to
 // ***********************************************
 // create various custom commands and overwrite
@@ -23,8 +25,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import { Utility } from "../support/utility"
-const url = new Utility().getBaseUrl()
 
 Cypress.Commands.add('openHomePage', () => {
   cy.visit(url)

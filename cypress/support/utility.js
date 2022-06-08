@@ -4,7 +4,7 @@ export class Utility {
     switch (envi){
       case 'prod':
         return "http://automationpractice.com/"
-      case 'staging':
+      case 'stage':
         return "https://google.com/"
       default:
         return "/"

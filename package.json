@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress run",
-    "prod": "npx cypress run ENV=prod --browser chrome",
-    "staging": "npx cypress run ENV=staging --browser chrome"
+    "prod": "npx cypress run --env ENV=prod --headless --browser chrome",
+    "stage": "npx cypress run --env ENV=stage --headless --browser chrome"
   },
   "author": "maria florencia lorenzo",
   "license": "ISC",

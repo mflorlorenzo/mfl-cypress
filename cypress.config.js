@@ -10,6 +10,6 @@ module.exports = defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
     baseUrl: 'http://automationpractice.com/',
-    excludeSpecPattern: '**/examples/*',
+    excludeSpecPattern: '**/examples/*'
   },
 })
