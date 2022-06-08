@@ -6,5 +6,6 @@
   "submitLoginButton": "#SubmitLogin",
   "accountClass": ".account",
   "userPageHeadingClass": ".page-heading",
-  "headerLogoClass": ".header_logo"
+  "headerLogoId": "#header_logo > a",
+  "headerLogoClass": ".logo"
 }

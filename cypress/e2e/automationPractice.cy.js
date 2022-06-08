@@ -36,9 +36,13 @@ context('Automation Practice Web', () => {
   })
 
   describe('HomePage', () => {
-
+    beforeEach(() => {
+      cy.openHomePage()
+    })
+    
     it('Logo', () => {
-      cy.get(selectors.headerLogoClass).should('be.visible').and('have.attr', 'src', 'http://automationpractice.com/img/logo.jpg')
+      cy.get(selectors.headerLogoId).should('be.visible').should('have.attr', 'href').and('contain', 'http://automationpractice.com/')
+      cy.get(selectors.headerLogoClass).should('have.attr', 'src', 'http://automationpractice.com/img/logo.jpg')
     })
 
   })
