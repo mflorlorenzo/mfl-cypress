@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx cypress run",
+    "prod": "npx cypress run ENV=prod --browser chrome",
+    "staging": "npx cypress run ENV=staging --browser chrome"
   },
   "author": "maria florencia lorenzo",
   "license": "ISC",
