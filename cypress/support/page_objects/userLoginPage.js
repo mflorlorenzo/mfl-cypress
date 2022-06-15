@@ -2,10 +2,10 @@ import selectors from "../../fixtures/index.json"
 
 export class UserLoginPage{
 
-  login(email, pass){
+  login(){
     cy.get(selectors.loginButton).click()
-    cy.get(selectors.emailTextBox).type(email)
-    cy.get(selectors.passTextBox).type(pass)
+    cy.get(selectors.emailTextBox).type(Cypress.env('username'))
+    cy.get(selectors.passTextBox).type(Cypress.env('password'))
     cy.get(selectors.submitLoginButton).click()
   }
 

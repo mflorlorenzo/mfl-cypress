@@ -11,6 +11,6 @@
   "author": "maria florencia lorenzo",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.0.1"
+    "cypress": "^10.1.0"
   }
 }

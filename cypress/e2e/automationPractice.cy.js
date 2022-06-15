@@ -9,8 +9,8 @@ context('Automation Practice Web', () => {
       cy.openHomePage()
     })
 
-    it('Login and logout', () => {
-      userLoginPage.login('flor@kryptomon.co', 'automation12345')
+    it.only('Login and logout', () => {
+      userLoginPage.login()
       cy.get(selectors.userPageHeadingClass).invoke('text').should('contains', 'My account')
       cy.get(selectors.logoutButton).should('be.visible')
       userLoginPage.logout()

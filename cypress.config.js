@@ -8,6 +8,10 @@ module.exports = defineConfig({
     runMode: 2,
     openMode: 0
   },
+  env: {
+    username: 'flor@kryptomon.co',
+    password: 'automation12345'
+  },
   e2e: {
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
