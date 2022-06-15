@@ -9,7 +9,7 @@ context('Automation Practice Web', () => {
       cy.openHomePage()
     })
 
-    it.only('Login and logout', () => {
+    it('Login and logout', () => {
       userLoginPage.login()
       cy.get(selectors.userPageHeadingClass).invoke('text').should('contains', 'My account')
       cy.get(selectors.logoutButton).should('be.visible')

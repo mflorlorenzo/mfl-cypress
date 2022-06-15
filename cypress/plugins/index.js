@@ -16,7 +16,7 @@ const fs = require('fs-extra')
 const path = require('path')
 
 function getConfigurationFile(file){
-  const pathToConfigFile = path.resolve('..', 'config', `${file}.json`)
+  const pathToConfigFile = path.resolve('cypress', 'config', `${file}.json`)
   if(!fs.existsSync(pathToConfigFile)){
     return {}
   }
