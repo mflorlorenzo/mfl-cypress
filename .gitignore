@@ -2,3 +2,5 @@ node_modules/
 videos/
 screenshots/
 e2e/examples
+results/
+mochawesome-report/

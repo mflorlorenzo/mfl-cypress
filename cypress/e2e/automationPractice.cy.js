@@ -40,7 +40,7 @@ context('Automation Practice Web', () => {
       cy.openHomePage()
     })
     
-    it('Logo', () => {
+    it.only('Logo', () => {
       cy.get(selectors.headerLogoId).should('be.visible').should('have.attr', 'href').and('contain', 'http://automationpractice.com/')
       cy.get(selectors.headerLogoClass).should('have.attr', 'src', 'http://automationpractice.com/img/logo.jpg')
     })
