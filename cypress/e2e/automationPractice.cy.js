@@ -4,7 +4,7 @@ import { userLoginPage } from "../support/page_objects/userLoginPage"
 
 context('Automation Practice Web', () => {
 
-  describe('User info', () => {
+  describe('User info', {tags: 'regression'}, () => {
     beforeEach(() => {
       cy.openHomePage()
     })
@@ -40,7 +40,7 @@ context('Automation Practice Web', () => {
       cy.openHomePage()
     })
     
-    it.only('Logo', () => {
+    it('Logo', {tags: 'smoke'}, () => {
       cy.get(selectors.headerLogoId).should('be.visible').should('have.attr', 'href').and('contain', 'http://automationpractice.com/')
       cy.get(selectors.headerLogoClass).should('have.attr', 'src', 'http://automationpractice.com/img/logo.jpg')
     })

@@ -25,10 +25,16 @@ To run tests, run the following command
 Commands for environments:
 
 ```bash
-  npm run prod
-  npm run stage
+  npm run cypress:run_prod
+  npm run cypress:run_qa
 ```
 
+You can run smoke or regression tests adding the following command:
+
+```bash
+  npm run cypress:run_prod:smoke
+  npm run cypress:run_qa:smoke
+```
 ## Custom Commands
 
 There are custom commands created which are located in support/commands.js Using those commands (functions) allows us to write test in extremely simple way and avoid code duplication.
