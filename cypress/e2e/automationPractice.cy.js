@@ -4,7 +4,7 @@ import { userLoginPage } from "../support/page_objects/userLoginPage"
 
 context('Automation Practice Web', () => {
 
-  describe('User info', () => {
+  describe('User info', {tags: 'smoke'}, () => {
     beforeEach(() => {
       cy.openHomePage()
     })
@@ -17,30 +17,18 @@ context('Automation Practice Web', () => {
       cy.get(selectors.userPageHeadingClass).invoke('text').should('contains', 'Authentication')
     })
 
-    it('My addresses: check info', () => {
-
-    })
-
-    it('My addresses: Modify info', () => {
-
-    })
-
-    it('My addresses: Delete info', () => {
-
-    })
-
-    it('My addresses: Create new info', () => {
+    it('My addresses: check, modify, delete, create info', () => {
 
     })
 
   })
 
-  describe('HomePage', () => {
+  describe('HomePage', {tags: 'regression'}, () => {
     beforeEach(() => {
       cy.openHomePage()
     })
     
-    it.only('Logo', () => {
+    it('Logo', () => {
       cy.get(selectors.headerLogoId).should('be.visible').should('have.attr', 'href').and('contain', 'http://automationpractice.com/')
       cy.get(selectors.headerLogoClass).should('have.attr', 'src', 'http://automationpractice.com/img/logo.jpg')
     })

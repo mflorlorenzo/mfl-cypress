@@ -31,6 +31,8 @@ function getConfigurationFile(file){
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
+  require('cypress-grep/src/plugin')(config)
+
   const file = config.env.configFile
   return getConfigurationFile(file)
 }

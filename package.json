@@ -6,16 +6,22 @@
   "scripts": {
     "cypress:run": "npm run prereport &&  npx cypress run",
     "cypress:run_qa": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa --browser chrome",
+    "cypress:run_qa:smoke": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa,grepTags=smoke --browser chrome",
+    "cypress:run_prod": "npx cypress run --env configFile=prod --browser chrome",
+    "cypress:run_prod:smoke": "npx cypress run --env configFile=prod,grepTags=regression --browser chrome",
     "cypress:e2e": "npm run cypress:run; npm run junit:merge; npm run mochawesome:merge",
     "delete:reports": "rm -r cypress/results/* || true",
     "prereport": "npm run delete:reports",
     "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
-    "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml"
+    "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml",
+    "smoke": "--env grepTags=smoke",
+    "regression": "--env grepTags=regression"
   },
   "author": "maria florencia lorenzo",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^10.1.0",
+    "cypress-grep": "^3.0.1",
     "cypress-multi-reporters": "^1.6.1",
     "junit-merge": "^2.0.0",
     "mocha-junit-reporter": "^2.0.2",
