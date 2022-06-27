@@ -15,9 +15,10 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-require('cypress-grep')()
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+require('cypress-grep')()
 
 Cypress.on('uncaught:exception', (err, runnable) => {
   // we expect a 3rd party library error with message 'list not defined'
