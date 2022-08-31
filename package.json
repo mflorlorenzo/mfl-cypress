@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "cy:run": "npm run prereport &&  npx cypress run",
+    "chrome:scripts": "cypress run --browser chrome ",
+    "firefox:scripts": "cypress run --browser firefox ",
     "cy:run_qa": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa --browser chrome",
     "cy:run_qa:smoke": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa,grepTags=smoke --browser chrome",
     "cy:run_prod": "npx cypress run --env configFile=prod --browser chrome",
