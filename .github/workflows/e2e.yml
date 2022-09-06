@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Cypress run
-        run: npm run cypress:e2e
+        run: npm run cypress:run
 
       - name: videos
         uses: actions/upload-artifact@v1
