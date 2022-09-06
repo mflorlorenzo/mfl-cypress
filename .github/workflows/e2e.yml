@@ -24,9 +24,7 @@ jobs:
         run: npm install
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          spec: cypress/e2e/automationPractice.cy.js
+        run: npm run cypress:e2e
 
       - name: videos
         uses: actions/upload-artifact@v1
