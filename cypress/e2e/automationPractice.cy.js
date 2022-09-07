@@ -4,7 +4,7 @@ import { userLoginPage } from "../support/page_objects/userLoginPage"
 
 context('Automation Practice Web', () => {
 
-  describe.skip('User info', {tags: 'smoke'}, () => {
+  describe('User info', {tags: 'smoke'}, () => {
     beforeEach(() => {
       cy.openHomePage()
     })
