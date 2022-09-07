@@ -25,6 +25,8 @@ jobs:
 
       - name: Cypress run
         run: npm run cypress:e2e
+        with:
+          spec: cypress/e2e/automationPractice.cy.js
 
       - name: screenshots
         uses: actions/upload-artifact@v1
