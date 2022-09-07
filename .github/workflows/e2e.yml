@@ -24,7 +24,7 @@ jobs:
         run: npm install && npx cypress install
 
       - name: Cypress run
-        run: npm run cy:run
+        run: npm run cypress:e2e
 
       - name: screenshots
         uses: actions/upload-artifact@v1
