@@ -24,7 +24,10 @@ jobs:
         run: npm install && npx cypress install
 
       - name: Cypress run
-        run: npm run cypress:e2e
+        uses: cypress-io/github-action@v2
+        with:
+          spec: cypress/e2e/automationPractice.cy.js
+          command: npm run cypress:e2e
 
       - name: screenshots
         uses: actions/upload-artifact@v1
