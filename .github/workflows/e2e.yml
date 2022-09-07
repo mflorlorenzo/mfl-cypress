@@ -26,6 +26,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          browser: chrome
           spec: cypress/e2e/automationPractice.cy.js
           command: npm run cypress:e2e
 
