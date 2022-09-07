@@ -24,9 +24,8 @@ jobs:
         run: npm install && npx cypress install
 
       - name: Cypress run
-        uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v4
         with:
-          browser: chrome
           spec: cypress/e2e/automationPractice.cy.js
           command: npm run cypress:e2e
 
