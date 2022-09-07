@@ -10,6 +10,8 @@
     "cypress:run_prod": "npx cypress run --env configFile=prod --browser chrome",
     "cypress:run_prod:smoke": "npx cypress run --env configFile=prod,grepTags=regression --browser chrome",
     "cypress:e2e": "npm run prereport; npm run cypress:run; npm run junit:merge; npm run mochawesome:merge",
+    "chrome:scripts": "cypress run --browser chrome ",
+    "firefox:scripts": "cypress run --browser firefox ",
     "delete:reports": "rm -r cypress/results/* || true",
     "prereport": "npm run delete:reports",
     "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
