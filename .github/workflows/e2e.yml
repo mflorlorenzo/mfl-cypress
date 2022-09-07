@@ -9,7 +9,7 @@ jobs:
   cypress-run:
     name: Cypress run
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 4
     steps:
       - name: Cancel previous run
         if: github.ref != 'refs/heads/main'
