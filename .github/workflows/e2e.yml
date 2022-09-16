@@ -11,7 +11,7 @@ jobs:
     name: Cypress run
     runs-on: ubuntu-latest
     timeout-minutes: 4
-    parallelism: 2
+    #parallelism: 2
     steps:
       - name: Cancel previous run
         if: github.ref != 'refs/heads/main'
