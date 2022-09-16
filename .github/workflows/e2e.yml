@@ -10,6 +10,8 @@ jobs:
     name: Cypress run
     runs-on: ubuntu-latest
     timeout-minutes: 4
+    docker:
+      - image: cypress/base:10
     steps:
       - name: Cancel previous run
         if: github.ref != 'refs/heads/main'
@@ -21,13 +23,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Dependencies
-        run: npm install && npx cypress install
+        run: npm ci
 
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
           spec: cypress/e2e/automationPractice.cy.js
-          command: npm run cypress:e2e
+          command: npm run cypress:e2e:paralell
 
       - name: screenshots
         uses: actions/upload-artifact@v1
