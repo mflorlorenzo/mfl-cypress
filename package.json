@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cypress:run": "npx cypress run --env configFile=prod",
-    "cypress:e2e:paralell": "npx cypress run --env configFile=prod --paralell",
+    "cypress:e2e:paralell": "npx cypress run --env configFile=prod --parallel",
     "cypress:run_qa": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa --browser chrome",
     "cypress:run_qa:smoke": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa,grepTags=smoke --browser chrome",
     "cypress:run_prod": "npx cypress run --env configFile=prod --browser chrome",
