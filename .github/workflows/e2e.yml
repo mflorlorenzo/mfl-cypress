@@ -11,8 +11,9 @@ jobs:
     name: Cypress run
     runs-on: ubuntu-latest
     timeout-minutes: 4
-    ##docker:
-      ##- image: cypress/included:6.8.0
+    docker:
+      - image: cypress/included:6.8.0
+    parallelism: 2
     steps:
       - name: Cancel previous run
         if: github.ref != 'refs/heads/main'
