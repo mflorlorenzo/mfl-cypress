@@ -15,4 +15,4 @@ export class UserLoginPage{
 
 }
 
-export const userLoginPage = new UserLoginPage()
+export const onUserLoginPage = new UserLoginPage()
