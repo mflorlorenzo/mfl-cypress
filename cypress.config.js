@@ -8,17 +8,21 @@ module.exports = defineConfig({
     runMode: 2,
     openMode: 0
   },
-  reporter: 'cypress-multi-reporters',
+  reporter: 'mochawesome',
   reporterOptions: {
-    configFile: 'reporter-config.json'
+    charts: true,
+    overwrite: false,
+    html: false,
+    json: true,
+    reportDir: "cypress/report/mochawesome-report",
+    reportFilename: "[status]_[datetime]-[name]-report",
+    timestamp: "longDate"
   },
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
-    baseUrl: 'http://automationpractice.com/',
+    baseUrl: 'https://thecatsite.com/',
     excludeSpecPattern: '**/examples/*'
   },
 })

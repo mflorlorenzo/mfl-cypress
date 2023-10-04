@@ -1,11 +1,3 @@
 {
-  "loginButton": ".login",
-  "logoutButton": ".logout",
-  "emailTextBox": "#email",
-  "passTextBox": "#passwd",
-  "submitLoginButton": "#SubmitLogin",
-  "accountClass": ".account",
-  "userPageHeadingClass": ".page-heading",
-  "headerLogoId": "#header_logo > a",
-  "headerLogoClass": ".logo"
+  "logoHomePageClass": ".logo-desktop"
 }
