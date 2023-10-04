@@ -14,7 +14,9 @@ module.exports = defineConfig({
     overwrite: false,
     html: false,
     json: true,
-    reportDir: "cypress/report/mochawesome-report"
+    reportDir: "cypress/report/mochawesome-report",
+    reportFilename: "[status]_[datetime]-[name]-report",
+    timestamp: "longDate"
   },
   e2e: {
     setupNodeEvents(on, config) {
