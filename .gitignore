@@ -3,5 +3,6 @@ videos/
 screenshots/
 e2e/examples
 results/
+report/
 mochawesome-report/
 mochawesome.json
