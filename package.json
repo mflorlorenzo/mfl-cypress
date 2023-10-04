@@ -7,13 +7,14 @@
     "cy:e2e": "npm run prereport; npm run cypress:run; npm run junit:merge; npm run mochawesome:merge",
     "cy:prod": "npx cypress run --env configFile=prod --browser chrome --headed",
     "cy:prod:smoke": "npx cypress run --env configFile=prod --browser chrome --headed grepTags=smoke",
-    "cy:member:prod": "npx cypress run --spec cypress/e2e/specs/member.cy.js --env configFile=prod --browser chrome --headed",
+    "cy:member:prod": "npm run prereport; npx cypress run --spec cypress/e2e/specs/member.cy.js --env configFile=prod --browser chrome --headed; npm run posttest",
     "cy:qa": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa --browser chrome --headed",
     "cy:qa:smoke": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa --browser chrome --headed grepTags=smoke",
-    "delete:reports": "rm -r cypress/results/* || true",
-    "prereport": "npm run delete:reports",
-    "mochawesome:merge": "npx mochawesome-merge \"cypress/results/mochawesome/*.json\" > mochawesome.json && npx marge mochawesome.json",
-    "junit:merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/result.xml"
+    "prereport": "npm run clean:reports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "clean:reports": "rm -R -f cypress/report",
+    "combine-reports": "npx mochawesome-merge cypress/report/mochawesome-report/*.json > cypress/report/output.json",
+    "generate-report": "npx marge cypress/report/output.json --reportDir cypress/report --inline"
   },
   "author": "maria florencia lorenzo",
   "license": "ISC",
@@ -24,7 +25,7 @@
     "junit-merge": "^2.0.0",
     "mocha-junit-reporter": "^2.0.2",
     "mochawesome": "^7.1.3",
-    "mochawesome-merge": "^4.2.1",
+    "mochawesome-merge": "^4.3.0",
     "mochawesome-report-generator": "^6.2.0"
   }
 }

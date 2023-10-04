@@ -8,9 +8,13 @@ module.exports = defineConfig({
     runMode: 2,
     openMode: 0
   },
-  reporter: 'cypress-multi-reporters',
+  reporter: 'mochawesome',
   reporterOptions: {
-    configFile: 'reporter-config.json'
+    charts: true,
+    overwrite: false,
+    html: false,
+    json: true,
+    reportDir: "cypress/report/mochawesome-report"
   },
   e2e: {
     setupNodeEvents(on, config) {
