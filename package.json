@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cypress:run": "npx cypress run --env configFile=prod --headed",
+    "cypress:run": "npx cypress run --env configFile=prod",
     "cypress:run_qa": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa --browser chrome --headed",
     "cypress:run_qa:smoke": "CYPRESS_BASE_URL=https://staging.app.com npx cypress run --env configFile=qa --browser chrome --headed grepTags=smoke",
     "cypress:run_prod": "npx cypress run --env configFile=prod --browser chrome --headed",
