@@ -1,0 +1,57 @@
+name: smoke testing on merge
+
+on: 
+  push:
+    branches: [main]
+  pull_request:
+  
+jobs:
+  cypress-run:
+    name: Cypress run
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v3
+
+      # Install Node on the runner
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "12.x"
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # Make directory to upload the test results
+      - name: Make Directory for results
+        run: mkdir -p testResults
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          spec: cypress/e2e/homepage.cy.js
+          command: npm run cy:prod:smoke
+
+      # Upload the contents of Test Results directory to workspace
+      - name: Upload Test Results
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Report
+          path: Cypress
+
+  notify:
+    name: Notify on Slack
+    if: failure()
+    runs-on: ubuntu-latest
+    needs: [cypress-run]
+
+    steps:
+      - uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_CHANNEL: Cypress run
+          SLACK_USERNAME: automationBot
+          SLACK_MESSAGE: 'FAILED :robot_face:'
+          SLACK_COLOR: '#ff0000'
+          SLACK_WEBHOOK: 
