@@ -1,14 +1,14 @@
 
 # MFL: Cypress
 
-This is an automated suitcase which was build to learn Cypress.
+Basic automated suitcase.
 
 
 
 
 ## Installation
 
-Install the projec with npm
+Install the project with npm
 
 ```bash
   npm install my-project
