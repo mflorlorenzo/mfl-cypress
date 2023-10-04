@@ -38,6 +38,9 @@ Use the following script to run the Smoke tests session:
 
 There are custom commands created which are located in support/commands.js Using those commands (functions) allows us to write test in extremely simple way and avoid code duplication.
 
+## REPORTS
+
+You can find the report generated on each run into /report folder, opening output.html file.
 
 ## Authors
 
