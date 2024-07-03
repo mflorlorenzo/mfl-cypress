@@ -1,3 +1,9 @@
 {
-  "logoHomePageClass": ".logo-desktop"
+  "logoHomePageClass": ".logo-desktop",
+  "userBtnClass": ".p-navgroup-link--user",
+  "loginButton": ".p-navgroup-link--logIn",
+  "emailTextBox": "input[name='login']",
+  "passTextBox": "input[name='password']",
+  "submitLoginButton": "button[type='submit']",
+  "logoutButton": ""
 }

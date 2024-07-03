@@ -16,7 +16,7 @@
   "author": "maria florencia lorenzo",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.11.0",
+    "cypress": "^13.11.0",
     "cypress-grep": "^3.0.2",
     "cypress-mochawesome-reporter": "^3.6.0",
     "cypress-multi-reporters": "^1.6.1",

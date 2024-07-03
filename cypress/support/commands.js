@@ -24,28 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-Cypress.Commands.add('openHomePage', () => {
-  cy.visit(Cypress.config('baseUrl'))
-})
-
-Cypress.Commands.add('loginToApplication', () => {
-  const userCredentials = {
-    "user": {
-      "email": "flor@kryptomon.co",
-      "password": "automation12345"
-    }
-  }
-
-  cy.request('POST', 'http://automationpractice.com/index.php?controller=authentication&back=my-account', userCredentials).its('body').then(body => {
-    const token = body.users.token
-    cy.wrap(token).as('token')
-    cy.visit('/', {
-      onbeforeunload(win){
-        win.localStorage.setItem('jtwToken', token)
-      }
-    })
-
-  })
-
-
-})
+Cypress.Commands.add("openHomePage", () => {
+  cy.visit(Cypress.config("baseUrl"));
+});
