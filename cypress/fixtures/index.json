@@ -5,5 +5,5 @@
   "emailTextBox": "input[name='login']",
   "passTextBox": "input[name='password']",
   "submitLoginButton": "button[type='submit']",
-  "logoutButton": ""
+  "formSubmitRowClass": ".formSubmitRow-controls"
 }

@@ -5,7 +5,7 @@ export class UserLoginPage {
     cy.get(selectors.loginButton).click();
     cy.get(selectors.emailTextBox).type(Cypress.env("username"));
     cy.get(selectors.passTextBox).type(Cypress.env("password"));
-    cy.get(".formSubmitRow-controls").within(() => {
+    cy.get(selectors.formSubmitRowClass).within(() => {
       cy.get(selectors.submitLoginButton).click();
     });
   }
