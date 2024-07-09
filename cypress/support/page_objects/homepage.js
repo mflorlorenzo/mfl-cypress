@@ -1,7 +1,5 @@
-import selectors from "../../fixtures/index.json"
+import selectors from "../../fixtures/index.json";
 
-export class Homepage{
+export class HomePage {}
 
-}
-
-export const onHomepage = new Homepage()
+export const onHomePage = new HomePage();
