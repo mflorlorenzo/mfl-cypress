@@ -27,27 +27,18 @@ Cypress.on("uncaught:exception", (err, runnable) => {
 });
 
 //For Reports
-import 'cypress-mochawesome-reporter/register'
-import addContext from 'mochawesome/addContext'
+import "cypress-mochawesome-reporter/register";
 
-const titleToFileName = (title) =>
-  title.replace(/[:\/]/g, '')
+const titleToFileName = (title) => title.replace(/[:\/]/g, "");
 
-Cypress.on('test:after:run', (test, runnable) => {
-  if (test.state === 'failed') {
-    let parent = runnable.parent
-    let filename = ''
+Cypress.on("test:after:run", (test, runnable) => {
+  if (test.state === "failed") {
+    let parent = runnable.parent;
+    let filename = "";
     while (parent && parent.title) {
-      filename = `${titleToFileName(
-        parent.title,
-      )} -- ${filename}`
-      parent = parent.parent
+      filename = `${titleToFileName(parent.title)} -- ${filename}`;
+      parent = parent.parent;
     }
-    filename += `${titleToFileName(
-      test.title,
-    )} (failed).png`
-    /*addContext( { test }, `../screenshots/${Cypress.spec.name}/${filename}`,
-    ),
-    addContext({ test }, `../videos/${Cypress.spec.name}.mp4`)*/
+    filename += `${titleToFileName(test.title)} (failed).png`;
   }
-})
+});
