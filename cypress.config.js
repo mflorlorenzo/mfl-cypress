@@ -1,15 +1,15 @@
-const { defineConfig } = require('cypress')
+const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   viewportHeight: 768,
   viewportWidth: 1024,
   retries: {
     runMode: 2,
-    openMode: 0
+    openMode: 0,
   },
-  reporter: 'cypress-mochawesome-reporter',
+  reporter: "cypress-mochawesome-reporter",
   reporterOptions: {
-    reportDir: 'cypress/results',
+    reportDir: "cypress/results",
     charts: true,
     embeddedScreenshots: true,
     videoOnFailOnly: true,
@@ -17,14 +17,15 @@ module.exports = defineConfig({
     saveAllAttempts: true,
     overwrite: true,
     reportFilename: "report-[datetime]",
-    timestamp: "longDate"
+    timestamp: "longDate",
   },
   e2e: {
-    baseUrl: 'https://thecatsite.com/',
-    excludeSpecPattern: '**/examples/*',
+    baseUrl: "https://thecatsite.com/",
+    excludeSpecPattern: "**/examples/*",
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on)
-      return require('./cypress/plugins/index.js')(on, config)
-    }
+      require("cypress-mochawesome-reporter/plugin")(on);
+      return require("./cypress/plugins/index.js")(on, config);
+    },
+    testIsolation: false,
   },
-})
+});

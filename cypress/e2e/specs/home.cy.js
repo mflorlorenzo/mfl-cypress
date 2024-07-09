@@ -5,7 +5,7 @@ import constants from "../../fixtures/constants.json";
 
 context("Cat Web", () => {
   describe("Homepage: ", { tags: "smoke" }, () => {
-    beforeEach(() => {
+    before(() => {
       cy.openHomePage();
     });
 
